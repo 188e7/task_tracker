@@ -3,7 +3,7 @@
 - ASP.NET Core
 - EntityFramework Core
 - MS SQL SERVER
-Swagger
+- Swagger
 ## packages
 - Microsoft.EntityFrameworkCore.SqlServer
 - Microsoft.EntityFrameworkCore.Tools
