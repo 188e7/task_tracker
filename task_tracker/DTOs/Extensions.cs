@@ -8,6 +8,7 @@ namespace task_tracker
 {
     public static class Extensions
     {
+        // Additional static extension class for converting DTOs and Models
         public static GetProjectDTO AsDTO(this Project project)
         {
             if(project.Tasks != null)

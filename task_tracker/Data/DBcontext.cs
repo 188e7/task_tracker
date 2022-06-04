@@ -9,7 +9,10 @@ namespace task_tracker.Data
 {
     public class DBcontext: DbContext
     {
-        public DBcontext(DbContextOptions<DBcontext> options): base(options) { }
+        public DBcontext(DbContextOptions<DBcontext> options): base(options) 
+        { 
+            Database.Migrate(); 
+        }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Models.Task> Tasks{ get; set; }
 

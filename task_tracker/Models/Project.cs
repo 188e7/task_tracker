@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -29,8 +27,6 @@ namespace task_tracker.Models
         public int priority { get; set; }
         public project_status status { get; set; }
         public virtual IList<Task> Tasks { get; set; }
-
-        [JsonConverter(typeof(StringEnumConverter))]
         public enum project_status
         {
             NotStarted,

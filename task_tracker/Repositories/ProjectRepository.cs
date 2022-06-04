@@ -18,12 +18,15 @@ namespace task_tracker.Repositories
         }
         public IEnumerable<GetProjectDTO> Get()
         {
-            return _context.Projects.Include(project => project.Tasks).Select(project => project.AsDTO()).ToList();
+            return _context.Projects.Include(project => project.Tasks)
+                                    .Select(project => project.AsDTO())
+                                    .ToList();
         }
         public GetProjectDTO Get(int id)
         {
-            GetProjectDTO _project = _context.Projects.Where(project => project.project_id == id).Select(project => project.AsDTO()).FirstOrDefault();
-            return _project;
+            return _context.Projects.Where(project => project.project_id == id)
+                                    .Select(project => project.AsDTO())
+                                    .FirstOrDefault();
         }
         public void Create(SetProjectDTO project)
         {

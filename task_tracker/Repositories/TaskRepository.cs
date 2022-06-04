@@ -17,12 +17,14 @@ namespace task_tracker.Repositories
         }
         public IEnumerable<GetTaskDTO> Get()
         {
-            return _context.Tasks.Select(task => task.AsDTO()).ToList();
+            return _context.Tasks.Select(task => task.AsDTO())
+                                .ToList();
         }
         public GetTaskDTO Get(int id)
         {
-            GetTaskDTO _task = _context.Tasks.Where(t => t.task_id == id).Select(task => task.AsDTO()).FirstOrDefault();
-            return _task;
+            return _context.Tasks.Where(t => t.task_id == id)
+                                 .Select(task => task.AsDTO())
+                                 .FirstOrDefault();
         }
         public void Create(SetTaskDTO task)
         {
